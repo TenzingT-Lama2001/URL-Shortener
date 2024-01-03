@@ -12,8 +12,8 @@ func NewRouter() http.Handler {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", indexHandler).Methods("GET")
-	router.HandleFunc("/api/shorten", controllers.ShortenController).Methods("POST")
-	router.HandleFunc("/api/{shortCode}", controllers.RedirectController).Methods("GET")
+	router.HandleFunc("/shorten", controllers.ShortenController).Methods("POST")
+	router.HandleFunc("/{shortCode}", controllers.RedirectController).Methods("GET")
 
 	return router
 }
