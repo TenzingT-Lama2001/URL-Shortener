@@ -27,7 +27,7 @@ func TestShortenController(t *testing.T) {
 	}
 
 	// Create a request with the JSON payload
-	req, err := http.NewRequest("POST", "/api/shorten", bytes.NewBuffer(payloadBytes))
+	req, err := http.NewRequest("POST", "/shorten", bytes.NewBuffer(payloadBytes))
 	if err != nil {
 		t.Fatal(err)
 	}

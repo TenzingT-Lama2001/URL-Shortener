@@ -12,7 +12,7 @@ import (
 func TestRedirectController(t *testing.T) {
 	// Arrange
 	router := mux.NewRouter()
-	router.HandleFunc("/api/{shortCode}", RedirectController).Methods("GET")
+	router.HandleFunc("/{shortCode}", RedirectController).Methods("GET")
 
 	// Set up a test case in the storage
 	testShortCode := "abc123"
@@ -20,7 +20,7 @@ func TestRedirectController(t *testing.T) {
 	storage.UrlMap[testShortCode] = testLongURL
 
 	// Create a request with the short code in the path
-	req, err := http.NewRequest("GET", "/api/"+testShortCode, nil)
+	req, err := http.NewRequest("GET", "/"+testShortCode, nil)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -44,7 +44,7 @@ func TestRedirectController(t *testing.T) {
 func TestRedirectControllerShortCodeNotFound(t *testing.T) {
 	// Arrange
 	router := mux.NewRouter()
-	router.HandleFunc("/api/{shortCode}", RedirectController).Methods("GET")
+	router.HandleFunc("/{shortCode}", RedirectController).Methods("GET")
 
 	// Set up a test case in the storage
 	testShortCode := "abc123"
@@ -52,7 +52,7 @@ func TestRedirectControllerShortCodeNotFound(t *testing.T) {
 	storage.UrlMap[testShortCode] = testLongURL
 
 	// Create a request with a non-existing short code in the path
-	req, err := http.NewRequest("GET", "/api/nonexistent", nil)
+	req, err := http.NewRequest("GET", "/nonexistent", nil)
 	if err != nil {
 		t.Fatal(err)
 	}
