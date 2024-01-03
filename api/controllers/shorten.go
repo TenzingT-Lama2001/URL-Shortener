@@ -59,7 +59,7 @@ func ShortenController(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(storage.UrlMap)
 
 	response := ShortenResponse{
-		ShortURL: fmt.Sprintf("https://example.com/%s", shortKey),
+		ShortURL: fmt.Sprintf("https://go-trim.tenzing121.com.np/api/%s", shortKey),
 	}
 
 	// Encode the response as JSON and write it to the response writer

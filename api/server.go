@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gorilla/handlers"
+	"github.com/rs/cors"
 )
 
 type Server struct {
@@ -21,13 +21,16 @@ func NewServer(listenAddr string, router http.Handler) *Server {
 
 func (s *Server) Start() error {
 
-	corsHandler := handlers.CORS(
-		handlers.AllowedOrigins([]string{"*"}),
-		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "OPTIONS"}),
-		handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}),
-	)
+	c := cors.New(cors.Options{
+        AllowedOrigins: []string{"http://localhost:3001"},
+        AllowCredentials: true,
+		AllowedMethods: []string{"GET", "POST", "DELETE", "PUT", "HEAD", "OPTIONS"},
+		AllowedHeaders: []string{"*"},
 
-	http.Handle("/", corsHandler(s.router))
+		
+    })
+
+	http.Handle("/", c.Handler(s.router))
 	fmt.Printf("Server running on %s\n", s.listenAddr)
 	return http.ListenAndServe(s.listenAddr, nil)
 }

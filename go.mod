@@ -4,14 +4,13 @@ go 1.21.4
 
 require (
 	github.com/go-playground/validator v9.31.0+incompatible
-	github.com/gorilla/handlers v1.5.2
 	github.com/gorilla/mux v1.8.1
+	github.com/rs/cors v1.10.1
 	github.com/stretchr/testify v1.8.4
 )
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/felixge/httpsnoop v1.0.3 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
