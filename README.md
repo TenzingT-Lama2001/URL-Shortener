@@ -46,7 +46,13 @@ What things you need to install the software and how to install them :
    ```bash
    go mod tidy
    ```
+   
+1. Copy .env.example to .env
 
+   ```bash
+   DOMAIN = "your-backend-url"
+   ```
+   
 1. Run the program
 
    ```bash
@@ -58,3 +64,36 @@ What things you need to install the software and how to install them :
    ```bash
    go test -v ./...
    ```
+
+## Endpoints
+
+#### /shorten 
+#### Description
+Accepts a JSON payload with a long URL and returns a short URL.
+
+- Method: `POST`
+- Path: `/shorten`
+- Body: `longURL` (string): The long URL to be shortened.
+- Headers:
+  - `Content-Type: application/json`
+
+```json
+{
+  "longURL": "https://github.com/TenzingT-Lama2001/URL-Shortener"
+}
+```
+
+
+
+### /{shortCode} 
+#### Description
+Redirects users to the original long URL based on the short code provided.
+
+- Method: `GET`
+- Path: `/{shortCode}`
+
+```json
+{
+    "shortURL": "http://localhost:3000/cCZAGC"
+}
+```
