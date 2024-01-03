@@ -1,6 +1,6 @@
 ![gotrim](https://github.com/TenzingT-Lama2001/URL-Shortener/assets/52858291/4f9c4643-5b50-4aa0-98e1-19e84a6ff572)
 <p align="center">
-  <h3 align="Your URL Shortening Solution.</h3>
+  <h3 align=Your URL Shortening Solution.</h3>
 </p>
 
 # Go Trim
