@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"os"
 	"url-shortner/api/storage"
 	"url-shortner/api/utils"
 
@@ -57,9 +58,10 @@ func ShortenController(w http.ResponseWriter, r *http.Request) {
 
 	// Print the map (for debugging purposes)
 	fmt.Println(storage.UrlMap)
-
+	domain := os.Getenv("DOMAIN")
 	response := ShortenResponse{
-		ShortURL: fmt.Sprintf("https://go-trim.tenzing121.com.np/%s", shortKey),
+		ShortURL: fmt.Sprintf("%s/%s", domain, shortKey),
+
 	}
 
 	// Encode the response as JSON and write it to the response writer
