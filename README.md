@@ -10,8 +10,8 @@ Your URL Shortening Solution.
 ## Live
 
 The site is live on:
-Backend: https://go-trim.tenzing121.com.np/
-Frontend: https://url-shortener-next-teal.vercel.app/
+- Backend: https://go-trim.tenzing121.com.np/
+- Frontend: https://url-shortener-next-teal.vercel.app/
 
 ## Getting started
 
