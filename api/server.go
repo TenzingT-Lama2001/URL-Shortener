@@ -22,7 +22,7 @@ func NewServer(listenAddr string, router http.Handler) *Server {
 func (s *Server) Start() error {
 
 	c := cors.New(cors.Options{
-        AllowedOrigins: []string{"http://localhost:3001"},
+        AllowedOrigins: []string{"http://localhost:3001", "https://url-shortener-next-teal.vercel.app"},
         AllowCredentials: true,
 		AllowedMethods: []string{"GET", "POST", "DELETE", "PUT", "HEAD", "OPTIONS"},
 		AllowedHeaders: []string{"*"},
