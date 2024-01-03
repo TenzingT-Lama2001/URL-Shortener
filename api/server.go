@@ -28,7 +28,6 @@ func (s *Server) Start() error {
 	)
 
 	http.Handle("/", corsHandler(s.router))
-	http.Handle("/", s.router)
 	fmt.Printf("Server running on %s\n", s.listenAddr)
 	return http.ListenAndServe(s.listenAddr, nil)
 }
