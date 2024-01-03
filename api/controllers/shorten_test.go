@@ -52,7 +52,8 @@ func TestShortenController(t *testing.T) {
 	assert.NotEmpty(t, response.ShortURL, "Short URL is empty")
 
 	// Check if the URLMap in storage has the correct mapping
-	assert.Equal(t, payload.LongURL, storage.UrlMap[strings.TrimPrefix(response.ShortURL, "https://example.com/")], "URL mapping is incorrect")
+	assert.Equal(t, payload.LongURL, storage.UrlMap[strings.TrimPrefix(response.ShortURL, "https://go-trim.tenzing121.com.np/")], "URL mapping is incorrect")
+
 }
 
 func resetStorage() {
