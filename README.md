@@ -10,8 +10,8 @@ Your URL Shortening Solution.
 ## Live
 
 The site is live on:
-- Production: https://protected.tenzing121.com.np/
-- Development: https://protected-dev.tenzing121.com.np/
+Backend: https://go-trim.tenzing121.com.np/
+Frontend: https://url-shortener-next-teal.vercel.app/
 
 ## Getting started
 
@@ -23,6 +23,7 @@ What things you need to install the software and how to install them :
 
 - [Git](https://git-scm.com/)
 - [Go](https://go.dev/doc/install)
+- [Node.js](https://nodejs.org/)
 
 ---
 
